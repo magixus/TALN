@@ -1,0 +1,146 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="application used in documents reseach">
+		<meta name="author" content="oussama boumaad">
+    <link rel="shortcut icon" type="image/png" href="{% static 'assets/img/favicon.ico' %}" />
+
+		<title> {%  block tilte %} Projet de recherche d'information  {% endblock %}</title>
+		<!-- google font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'assets/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+		<!-- Custom styles for this template bs 4.1.2-->
+		<link href="{% static 'assets/css/document.css' %}" rel="stylesheet">
+        {% block additional_css %}
+        
+        {% endblock %}
+	</head>
+
+	<body>
+
+    <!-- navigation bar -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
+      <a class="navbar-brand py-4" href="/">
+        Recherche d'information
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse " id="navbarSupportedContent" >
+        <ul class="navbar-nav mr-auto mx-auto">
+          <li class="nav-item" id="documents">
+            <a class="nav-link py-4" href="/documents"> documents </a>
+          </li>
+          <li class="nav-item" id="statistics">
+            <a class="nav-link py-4" href="/statistics"> statistiques </a>
+          </li>
+          <li class="nav-item" id="infos">
+            <a class="nav-link py-4" href="/infos"> infos </a>
+          </li>
+
+
+
+
+          {% comment %}<li class="nav-item dropdown">
+            <a class="nav-link py-4 dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Dropdown
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>{% endcomment %}
+        </ul>
+        <form class="form-inline my-2 my-lg-0" action="searchInDocs">
+          <input id="search" class="form-control mr-sm-2" type="search" placeholder="Search" name="tags">
+          <button id="btnsearch" class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+
+      </div>
+    </nav>
+
+    {% block body_content %}
+    
+    {% endblock %}
+
+
+    <!-- Footer -->
+    <footer class="page-footer font-small special-color-dark pt-4">
+
+        <!-- Footer Elements -->
+        <div class="container">
+
+          <!-- Social buttons -->
+          <ul class="list-unstyled list-inline text-center">
+            <li class="list-inline-item">
+              <a class="btn-floating btn-fb mx-1">
+                <i class="fa fa-facebook"> </i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a class="btn-floating btn-tw mx-1">
+                <i class="fa fa-twitter"> </i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a class="btn-floating btn-gplus mx-1">
+                <i class="fa fa-google-plus"> </i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a class="btn-floating btn-li mx-1">
+                <i class="fa fa-linkedin"> </i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a class="btn-floating btn-dribbble mx-1">
+                <i class="fa fa-dribbble"> </i>
+              </a>
+            </li>
+          </ul>
+          <!-- Social buttons -->
+
+        </div>
+        <!-- Footer Elements -->
+
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">© 2018 Copyright:
+          <a href=""> Boumaad Oussama</a>
+          <a href=""> Saouli Hadjer</a>
+          <a href=""> Safia</a>
+          <a href=""> Ghersa Loucif</a>
+        </div>
+        <!-- Copyright -->
+
+      </footer>
+      <!-- Footer -->
+
+
+
+
+		<!-- Bootstrap core JavaScript
+		================================================== -->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="{% static 'js/core/jquery.min.js' %}"></script>
+		<script src="{% static 'js/core/popper.min.js' %}"></script>
+		<script src="{% static 'js/core/bootstrap.min.js' %}"></script>
+		<script src="{% static 'js/docsearch.js' %}"></script>
+        <!-- Chartist JS -->
+        <script src="{% static "js/plugins/chartist.min.js" %}"></script>
+		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug
+		<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>-->
+
+        {%  block new_script %}
+        {% endblock %}
+	</body>
+</html>
