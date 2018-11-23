@@ -1,0 +1,48 @@
+{% extends 'docsearch/base.html' %}
+{%  load static %}
+{% block title %}
+    إظهارالملفات
+{% endblock %}
+{% block add_css %}
+    <link rel="stylesheet" href="{% static 'assets/css/simple-sidebar.css' %}">
+{% endblock %}
+
+
+{% block body_content %}
+{% if docs %}
+
+        <div id="wrapper" >
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper" class="text-right" >
+            <ul class="sidebar-nav" style="padding-right: 20px">
+                <li class="sidebar-brand">
+                    <span class="h2 text-white">
+                         : النصوص
+                    </span>
+                </li>
+                {% for d in docs %}
+                  <li>
+                    <span class="btn py-1 text-white" href= "{{ d }}" > {{ d }}</span>
+                  </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper text-right">
+            <div class="container-fluid ">
+                <h1 class="document_header display-2 text-right px-lg-4 px-5" >إستظهارالملفات و محتوياتها</h1>
+                <hr class="m-y-md">
+                <p class="doc_paragraph text-right text-justify"></p>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+{% endif %}
+{% endblock %}
+

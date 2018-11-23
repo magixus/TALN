@@ -9,5 +9,7 @@ $(document).ready(function() {
     //$( '.navbar-nav' ).find( 'li.active' ).removeClass('active');
     $( place ).addClass( 'active' );
 });
-
-{% if data %}
+$("#sidebar-wrapper").hover(function(e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+});

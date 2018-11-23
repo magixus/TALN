@@ -7,7 +7,7 @@ from os import listdir
 from os.path import join
 
 
-mypath = join(settings.STATIC_URL, 'docs')  # insert the path to our directory
+mypath = join(settings.BASE_DIR, 'static/docs')  # insert the path to our directory
 
 def index(request):
     return render(request, "docsearch/index.html")
@@ -15,8 +15,7 @@ def index(request):
 def documents(request):
     # get files list
     #mypath = join(settings.BASE_DIR, 'docs')  # insert the path to our directory
-    print(static(mypath))
-    file_list = listdir(static(mypath))
+    file_list = listdir(mypath)
     file_list_links = [mypath.join('/'+l) for l in file_list]
     print(file_list)
 
@@ -39,10 +38,12 @@ def load(fileName):
 
 ## show document content on the web
 def show_doc(request, doc):
+    print(mypath)
     doc_path = join(settings.STATIC_URL, join('docs',doc))
-    print(doc_path)
     print(doc_path)
     str_doc = load(doc_path)
     return HttpResponse(str_doc)
 
 
+def searchTags (request, tags):
+    return render(request, "docsearch/index.html")
