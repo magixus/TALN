@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="{% static 'assets/css/simple-sidebar.css' %}">
 {% endblock %}
 
-
 {% block body_content %}
 {% if docs %}
 
@@ -23,7 +22,7 @@
                 </li>
                 {% for d in docs %}
                   <li>
-                    <span class="btn py-1 text-white" href= "{{ d }}" > {{ d }}</span>
+                    <span class="d-inline-block  btn text-right text-truncate py-1 text-white" style="max-width: 200px;" href= "{{ d }}"  onclick='javascript:show_content( "{{ d }}" )'> {{ d }}</span>
                   </li>
                 {% endfor %}
             </ul>
@@ -33,9 +32,12 @@
         <!-- Page Content -->
         <div id="page-content-wrapper text-right">
             <div class="container-fluid ">
-                <h1 class="document_header display-2 text-right px-lg-4 px-5" >إستظهارالملفات و محتوياتها</h1>
+                <h1 class="document_header display-4 text-right px-lg-4 px-5" >إستظهارالملفات و محتوياتها</h1>
                 <hr class="m-y-md">
-                <p class="doc_paragraph text-right text-justify"></p>
+                <p class="doc_paragraph text-right text-justify" id="paragraph">
+
+                    <!--     the text of the document will show here      -->
+                </p>
             </div>
         </div>
         <!-- /#page-content-wrapper -->
@@ -46,3 +48,14 @@
 {% endif %}
 {% endblock %}
 
+{%  block new_script %}
+    <script>
+        function show_content(f){
+            //$('#paragraph').load(f);
+            $.get(f, function(data){
+                $("#paragraph").text(data);
+            });
+        }
+
+    </script>
+{% endblock %}
