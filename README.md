@@ -5,6 +5,7 @@ A web based application developed with django framwork and nltk for arabic langu
 
 * python 3.6^ ----- **install it** [here][1]
 * django 2.0^ ----- **install it** [here][2]
+* django_heroku ----- `pip install django_heroku`
 
 #### INSTALL & RUN
 

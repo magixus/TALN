@@ -1,1 +1,0 @@
-un modèle de recherche d’information est composé de trois modules, module de représentation des documents, module de représentation de requête, module d’appariement entre document et requête

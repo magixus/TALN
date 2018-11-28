@@ -14,13 +14,11 @@ def index(request):
 
 def documents(request):
     # get files list
-    #mypath = join(settings.BASE_DIR, 'docs')  # insert the path to our directory
     file_list = listdir(mypath)
-    file_list_links = [mypath.join('/'+l) for l in file_list]
-    print(file_list)
-
+    file_list_title = [l.split('.')[0] for l in file_list]
+    #file_list_links = [mypath.join(l) for l in file_list]
     # render this list to view
-    return render(request,'docsearch/mydocuments.html', {'docs': file_list})
+    return render(request,'docsearch/mydocuments.html', {'docs': file_list_title})
 
 
 def statistics(request):
@@ -38,20 +36,19 @@ def statistics(request):
     return render(request,'docsearch/statistics.html', {'wordscomm' : wordscomm, 'wordscoust' : wordscoust})
 
 def infos(request):
-    return render(request, 'docsearch/index.html')
+    return render(request, 'docsearch/about.html')
 
 ## load a file and return it content
 def load(fileName):
-    f = open(fileName)
+    f = open(fileName, 'r', encoding="utf-8")
     str = f.read()
     f.close()
     return str
 
 ## show document content on the web
 def show_doc(request, doc):
-    print(mypath)
-    doc_path = join(settings.STATIC_URL, join('docs',doc))
-    print(doc_path)
+    file = doc+".txt"
+    doc_path = join(mypath, file)
     str_doc = load(doc_path)
     return HttpResponse(str_doc)
 
