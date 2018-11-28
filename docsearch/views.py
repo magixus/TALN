@@ -24,7 +24,18 @@ def documents(request):
 
 
 def statistics(request):
-    return render(request,'docsearch/index.html')
+    from nltk import FreqDist
+
+    Fil = load(join(mypath,listdir(mypath)[1])).split(' ')
+
+    fd = FreqDist(Fil)
+
+    wordscomm = list(fd.keys());
+    wordscoust =list(fd.values()); 
+    
+    print(fd.keys())
+
+    return render(request,'docsearch/statistics.html', {'wordscomm' : wordscomm, 'wordscoust' : wordscoust})
 
 def infos(request):
     return render(request, 'docsearch/index.html')
