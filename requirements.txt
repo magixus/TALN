@@ -80,7 +80,7 @@ pyflakes==2.0
 Pygments==2.2
 PyHamcrest==1.9
 pylint==2.1
-pyodbc==4.0
+pyodbc==4.0.24
 pyOpenSSL==18.0
 pyparsing==2.2
 PySocks==1.6
