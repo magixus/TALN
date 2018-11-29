@@ -19,7 +19,7 @@ contextlib2==0.5
 cryptography==2.3
 cycler==0.10
 Cython==0.28
-cytoolz==0.9.1
+cytoolz==0.9
 dask==0.19
 datashape==0.5
 decorator==4.3
@@ -82,7 +82,7 @@ Pillow==5.2
 pkginfo==1.4
 pycparser==2.18
 pycrypto==2.6
-pycurl==7.43.2
+pycurl==7.43
 pyflakes==2.0
 Pygments==2.2
 PyHamcrest==1.9
