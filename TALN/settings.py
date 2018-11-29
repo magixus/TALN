@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'vi!hk2z@c*)i8tv#kyh@xxzg+#2a($9_#mcm)o258*^hn0-#sh'
 
-# SECURITY WARNING: don't run with debug turned on in production!
+# SECURITY WARNING: don't run swith debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = [
@@ -121,6 +121,9 @@ USE_L10N = True
 
 USE_TZ = True
 
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
@@ -131,6 +134,8 @@ STATICFILES_DIRS = (
         os.path.join(BASE_DIR, 'static'),
         os.path.join(BASE_DIR, 'docsearch/static'),
 )
+
+STATICFILES_STORAGE = 'whitenoise.django.GzipMainifestStaticFilesStorage'
 
 # Activate Django-Heroku.
 django_heroku.settings(locals())
