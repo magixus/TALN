@@ -1,1 +1,1 @@
-web: gunicorn TALN.wsgi
+web: gunicorn TALN.wsgi --log-file -

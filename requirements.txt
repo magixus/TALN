@@ -1,7 +1,4 @@
 alabaster
-anaconda-client
-anaconda-navigator
-anaconda-project
 appdirs
 asn1crypto
 astroid
@@ -28,8 +25,6 @@ cloudpickle
 clyent
 colorama
 comtypes
-conda
-conda-build
 constantly
 contextlib2
 cryptography
@@ -74,12 +69,6 @@ jdcal
 jedi
 Jinja2
 jsonschema
-jupyter
-jupyter-client
-jupyter-console
-jupyter-core
-jupyterlab
-jupyterlab-launcher
 keyring
 kiwisolver
 lazy-object-proxy
@@ -178,8 +167,6 @@ sortedcollections
 sortedcontainers
 Sphinx
 sphinxcontrib-websupport
-spyder
-spyder-kernels
 SQLAlchemy
 statsmodels
 sympy
