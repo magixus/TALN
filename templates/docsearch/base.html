@@ -34,7 +34,7 @@
     <!-- navigation bar -->
     <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top ml-auto ">
 
-        <form class="form-inline my-2 my-lg-0" action="searchInDocs">
+        <form class="form-inline my-2 my-lg-0" action="{% url 'searchTags' %}" method="get">
           <input id="search" class="form-control mr-sm-2 text-right" type="search" placeholder="... بحث" name="tags">
           <button id="btnsearch" class="btn btn-outline-success" type="submit">إبحث</button>
         </form>

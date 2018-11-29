@@ -53,5 +53,5 @@ def show_doc(request, doc):
     return HttpResponse(str_doc)
 
 
-def searchTags (request, tags):
+def searchTags(request):
     return render(request, "docsearch/index.html")
