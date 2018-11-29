@@ -1,5 +1,13 @@
 django
+dj-database-url
+django-heroku
 google
 gunicorn
 whitenoise
-django-heroku
+numpy
+nltk
+urllib3
+lxml
+beautifulsoup4
+Cython
+html5lib
