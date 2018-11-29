@@ -1,7 +1,7 @@
 # TALN
 A web based application developed with django framwork and nltk for arabic language processing
 
-*demo at : [arabichistory.com][3]
+* demo at : [arabichistory.com][3]
 
 #### REQUIEREMENTS:
 
