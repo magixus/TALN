@@ -5,9 +5,12 @@ from django.http import HttpResponse
 from django.conf import settings
 from os import listdir
 from os.path import join
+import nltk
 
 
-mypath = join(settings.BASE_DIR, 'static/docs')  # insert the path to our directory
+
+mypath = join(settings.BASE_DIR, 'static/nltk_data')  # insert the path to our directory
+nltk.data.path = mypath
 
 def index(request):
     return render(request, "docsearch/index.html")
