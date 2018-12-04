@@ -25,14 +25,12 @@ def documents(request):
 
 
 def statistics(request):
-    from nltk import FreqDist
-
     Fil = load(join(mypath,listdir(mypath)[1])).split(' ')
 
-    fd = FreqDist(Fil)
+    fd = nltk.FreqDist(Fil)
 
     wordscomm = list(fd.keys());
-    wordscoust =list(fd.values()); 
+    wordscoust =list(fd.values());
     
     print(fd.keys())
 
