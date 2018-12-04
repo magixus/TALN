@@ -2,19 +2,19 @@
 
 {% load static %}
 
-{% block tilte%}
-statistics
+{% block title%}
+ إحصائيات
 {% endblock%}
 
 {% block body_content %}
-<canvas id="myChart"  class="bg-dark p-5 m-auto" width="400" height="400"></canvas>
+    <canvas id="myChart"  class="bg-dark p-5 m-auto" width="400" height="400"></canvas>
 
-{% endblock %}
+    {% endblock %}
 
-{% block new_script %}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>
+    {% block new_script %}
+    <script src="{%  static 'assets/js/plugins/chartist.min.js' %}"></script>
 
-<script>
+    <script>
     var w = [];
     var c = [];
 </script>

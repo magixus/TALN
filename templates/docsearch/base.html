@@ -8,7 +8,7 @@
 		<meta name="author" content="oussama boumaad">
         <link rel="shortcut icon" type="image/ico" href="{% static 'assets/img/favicon.ico' %}" />
 
-            <title> {%  block tilte %} Projet de recherche d'information  {% endblock %}</title>
+            <title> {%  block title %} Projet de recherche d'information  {% endblock %}</title>
             <!-- google font -->
         <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
         {% block add_font %}
@@ -34,7 +34,7 @@
     <!-- navigation bar -->
     <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top ml-auto ">
 
-        <form class="form-inline my-2 my-lg-0" action="{% url 'searchTags' %}" method="get">
+        <form class="form-inline my-2 my-lg-0" action="{% url 'searchTags' %}" method="post">
           <input id="search" class="form-control mr-sm-2 text-right" type="search" placeholder="... بحث" name="tags">
           <button id="btnsearch" class="btn btn-outline-success" type="submit">إبحث</button>
         </form>
