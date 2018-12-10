@@ -28,6 +28,7 @@ def documents(request):
 
 def statistics(request):
     Fil = load(join(mypath,listdir(mypath)[1])).split(' ')
+    words = nltk.corpus.arabichistory.words()
 
     fd = nltk.FreqDist(Fil)
 
@@ -77,4 +78,4 @@ def searchTags(request):
 
 
 
-    return render(request, "docsearch/index.html", )
+    return render(request, "docsearch/index.html")
