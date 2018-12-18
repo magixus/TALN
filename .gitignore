@@ -3,3 +3,4 @@ db.sqlite3
 venv
 __pychace__
 docsearch/__pycache__
+scripts/__pycache__
