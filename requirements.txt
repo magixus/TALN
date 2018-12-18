@@ -11,3 +11,5 @@ lxml
 beautifulsoup4
 Cython
 html5lib
+requests
+pyquran
