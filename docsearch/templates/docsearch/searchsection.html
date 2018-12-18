@@ -1,0 +1,16 @@
+{% extends 'docsearch/base.html' %}
+{% block tilte %}
+معلومات عن البرنامح
+{% endblock %}
+
+{% block body_content %}
+<div class="container">
+    <div class="row m-2">
+        <button type="button" class="btn btn-outline-btn btn-outline-success" data-toggle="modal" data-target="#exampleModal">تعريف الكلمة</button>
+    </div>
+    <span class="d-block p-2 bg-success text-white text-right">
+        إستظهار مواقع الكلمة في النصوص
+    </span>
+    {{ searched_tag | safe}}
+</div>
+{% endblock %}

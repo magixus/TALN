@@ -1,9 +1,13 @@
 import nltk
 from re import sub
 TBWTokenizer = nltk.tokenize.TreebankWordTokenizer()
+from django.conf import settings
+from os.path import join
 
-nltk.data.path = "../../static/nltk_data"
+mypath = join(settings.BASE_DIR, 'static\\nltk_data') 
 
+stp1 = join(mypath,"corpora\\stopwords\\arabic")
+stp2 = join(mypath,"corpora\\stopwords\\arabic2")
 # read input file and return it string
 def load(fileName):
     f = open(fileName, 'r', encoding="utf-8")
@@ -19,13 +23,11 @@ def arabicTokenize(fileName):
     list_words= TBWTokenizer.tokenize(sub(r"[،.؟!]*","",file_text))
 
     # get all stop words
-    stpwords1 = nltk.corpus.stopwords.words("arabic")
-    stpwords2 = nltk.corpus.stopwords.words("arabic2")
+    stpwords1 = load(stp1).split('\n')
+    stpwords2 = load(stp2).split('\n')
 
     # merge stop words to one list
     stpwords = set(stpwords1) | set(stpwords2)
 
     # return on a list all pure words.
     return [w for w in list_words if w not in stpwords]
-
-

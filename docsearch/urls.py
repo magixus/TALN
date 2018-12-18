@@ -10,5 +10,6 @@ urlpatterns = [
     path('documents/<str:doc>', views.show_doc, name='show_doc'),
     path('statistics/', views.statistics, name='statistics'),
     path('infos/', views.infos, name='infos'),
-    path("searchInDocs/", views.searchTags, name="searchTags")
+    path("searchInDocs/", views.searchTags, name="searchTags"),
+    path("editcorpus/", views.addToCorpus, name="editcorpus")
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

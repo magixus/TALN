@@ -1,6 +1,6 @@
 from django import forms
 
 class FromName(forms.Form):
-    name = forms.CharField()
-    email = forms.EmailField()
-    text = forms.CharField(widget = forms.Textarea)
+    tags = forms.CharField()
+    #email = forms.EmailField()
+    #text = forms.CharField(widget = forms.Textarea)
