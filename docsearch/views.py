@@ -39,7 +39,6 @@ def documents(request):
 
 
 def statistics(request):
-<<<<<<< HEAD
     pathfiles = [mypath + "\\corpora\\acreljahlia\\" +
                  file for file in listdir(mypath + "\\corpora\\acreljahlia")]
     pathfiles = pathfiles + [mypath + "\\corpora\\acrfjrislam\\" +
@@ -48,10 +47,9 @@ def statistics(request):
                              file for file in listdir(mypath + "\\corpora\\acrelhadith")]
     pathfiles = pathfiles + [mypath + "\\corpora\\quoran\\" +
                              file for file in listdir(mypath + "\\corpora\\quoran")]
-=======
+
     Fil = load(join(mypath,listdir(mypath)[1])).split(' ')
     words = nltk.corpus.arabichistory.words()
->>>>>>> fef874589db3949462b8fc4de17f6826e260c6e6
 
     str_tab = """<table class="table  table-striped table-borderless"><thead>
                 <tr>
@@ -133,7 +131,7 @@ def show_doc(request, doc):
 
 
 def searchTags(request):
-<<<<<<< HEAD
+
     # view for forms
     pathfiles = [mypath + "\\corpora\\acreljahlia\\" +
                  file for file in listdir(mypath + "\\corpora\\acreljahlia")]
@@ -213,27 +211,5 @@ def normalisation_et_nettoyage (word):
     text = strip_tatweel(word)
     #text = normalize_hamza(word)
     return text
-    
-=======
-    # récupération du mot
 
 
-
-    # je fait une request é almaaany.com et je récupère les defs
-
-
-    # je récupère la list des fichiers
-
-    """
-        t1 = f1
-        rest = t1.concordance(" hadjer ")
-
-
-    :param request:
-    :return:
-    """
-
-
-
-    return render(request, "docsearch/index.html")
->>>>>>> fef874589db3949462b8fc4de17f6826e260c6e6
