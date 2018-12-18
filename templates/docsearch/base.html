@@ -31,7 +31,7 @@
     <h1 class="text-right"> المعجم التاريخي الجامع</h1>
   </div>
   <!-- navigation bar -->
-  <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top ml-auto ">
+  <nav class="navbar navbar-expand-md navbar-dark {% block nav_color %} bg-dark {% endblock %}  sticky-top ml-auto ">
 
     <form class="form-inline my-2 my-lg-0" action="{% url 'searchTags' %}" method="POST">
       <input id="search" class="form-control mr-sm-2 text-right" type="search" placeholder="... بحث" name="tags">
@@ -58,23 +58,6 @@
         <li class="nav-item" id="documents">
           <a class="nav-link py-4" href="{% url 'documents' %}"> محتوى </a>
         </li>
-
-        {% comment %}<li class="nav-item dropdown">
-
-          {% comment %}
-        <li class="nav-item dropdown">
-
-          <a class="nav-link py-4 dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            Dropdown
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
-        </li>{% endcomment %}
       </ul>
 
       <a class="navbar-brand px-md-3 py-4 active d-flex justify-content-end" href="/">

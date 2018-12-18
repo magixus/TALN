@@ -28,9 +28,7 @@ def index(request):
 
 
 def documents(request):
-    # get files list
-    print(nltk.data.path)
-    print(nltk.corpus.arabichistory.words())
+    # get files lis
     file_list = listdir(mypath)
     file_list_title = [l.split('.')[0] for l in file_list]
     #file_list_links = [mypath.join(l) for l in file_list]

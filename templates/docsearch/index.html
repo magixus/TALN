@@ -1,10 +1,38 @@
 {% extends 'docsearch/base.html' %}
+{% load static %}
 {% block tilte %} Recherche D'information {% endblock%}
-
-{% block content_body %}
-  <div class="container">
-    <h2>this is a tilte</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusamus asperiores dolore dolorem dolorum expedita ipsa iure laborum, modi nam natus quam quia veritatis voluptatem voluptatibus! Beatae consequuntur odit rem!</p>
-  </div>
+{% block add_css %}
+	<style>
+		.navbar{
+			background-color: #2375a7;
+		}
+		header.masthead{
+			text-align: center;
+			color : white;
+			background-image: url({% static 'assets/img/cover.jpeg' %}) ;
+			background-repeat: no-repeat;
+			background-attachment: scroll;
+			background-position: center center;
+			background-size: cover;
+			-moz-background-size: cover;
+			-webkit-background-size: cover;
+			-o-background-size: cover;
+			width: 100%;
+			height: 100%;
+			position: fixed;
+		}
+	</style>
 {% endblock %}
- (
+{% block nav_color %}
+	text-black
+{% endblock %}
+
+{% block body_content %}
+	<header class="masthead">
+			<div class="container">
+				<div class="intro-text">
+
+				</div>
+			</div>
+	</header>
+{% endblock %}
