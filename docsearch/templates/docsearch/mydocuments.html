@@ -5,13 +5,12 @@
 {% endblock %}
 {% block add_css %}
     <link rel="stylesheet" href="{% static 'assets/css/simple-sidebar.css' %}">
-    <link rel="stylesheet" href="{% static 'assets/css/contentscroller.min.css' %}">
 {% endblock %}
 
 {% block body_content %}
 {% if docs %}
 
-        <div id="wrapper" >
+        <div id="wrapper" class="toggled">
 
         <!-- Sidebar -->
         <div id="sidebar-wrapper" class="text-right" >
@@ -50,7 +49,6 @@
 {% endblock %}
 
 {%  block new_script %}
-    <script src="{% static 'assets/js/plugins/jquery-custom-scroller.min.js' %}"></script>
     <script>
         function show_content(f){
             //$('#paragraph').load(f);

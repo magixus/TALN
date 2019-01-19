@@ -16,10 +16,10 @@ from .scripts.staistics import theFirst20Reccurent, searchPopUp, validationPopUp
 from .scripts.worddefinition import kamouss
 from .scripts.arabictokenizer import arabicTokenize
 from pyquran import strip_tashkeel,strip_tatweel
-
+from TALN.settings import  pathfiles
 
 # insert the path to our directory
-mypath = join(settings.BASE_DIR, 'static\\nltk_data')
+mypath = join(settings.BASE_DIR, 'static/nltk_data')
 #nltk.data.path = mypath
 
 
@@ -37,17 +37,8 @@ def documents(request):
 
 
 def statistics(request):
-    pathfiles = [mypath + "\\corpora\\acreljahlia\\" +
-                 file for file in listdir(mypath + "\\corpora\\acreljahlia")]
-    pathfiles = pathfiles + [mypath + "\\corpora\\acrfjrislam\\" +
-                             file for file in listdir(mypath + "\\corpora\\acrfjrislam")]
-    pathfiles = pathfiles + [mypath + "\\corpora\\acrelhadith\\" +
-                             file for file in listdir(mypath + "\\corpora\\acrelhadith")]
-    pathfiles = pathfiles + [mypath + "\\corpora\\quoran\\" +
-                             file for file in listdir(mypath + "\\corpora\\quoran")]
-
-    Fil = load(join(mypath,listdir(mypath)[1])).split(' ')
-    words = nltk.corpus.arabichistory.words()
+    #Fil = load(join(mypath,listdir(mypath)[1])).split(' ')
+    #words = nltk.corpus.arabichistory.words()
 
     str_tab = """<table class="table  table-striped table-borderless"><thead>
                 <tr>
@@ -62,9 +53,9 @@ def statistics(request):
     nbr = 0
     nbrtext = 0
     for file in pathfiles:
-        tmp = splitext(file)[0].split('\\')[-1]
+        tmp = splitext(file)[0].split('/')[-1]
         tmp1 = len(arabicTokenize(file))
-        tmp2 = historyAge(splitext(file)[0].split('\\')[-2])
+        tmp2 = historyAge(splitext(file)[0].split('/')[-2])
         fd = nltk.FreqDist(arabicTokenize(file))
         tmp3 = fd.most_common(1)
         str_tab = str_tab + f"""
@@ -131,14 +122,6 @@ def show_doc(request, doc):
 def searchTags(request):
 
     # view for forms
-    pathfiles = [mypath + "\\corpora\\acreljahlia\\" +
-                 file for file in listdir(mypath + "\\corpora\\acreljahlia")]
-    pathfiles = pathfiles + [mypath + "\\corpora\\acrfjrislam\\" +
-                             file for file in listdir(mypath + "\\corpora\\acrfjrislam")]
-    pathfiles = pathfiles + [mypath + "\\corpora\\acrelhadith\\" +
-                             file for file in listdir(mypath + "\\corpora\\acrelhadith")]
-    pathfiles = pathfiles + [mypath + "\\corpora\\quoran\\" +
-                             file for file in listdir(mypath + "\\corpora\\quoran")]
     resultat = ''
     # for file in pathfiles:
     if request.method == 'POST':
@@ -147,9 +130,9 @@ def searchTags(request):
             searched_tag = form.cleaned_data['tags'] 					# récupérer le mot recherché
             searched_tag =  normalisation_et_nettoyage(searched_tag) 	# normaliser
             if is_connected():										 	# tester si présence de la connexion
-	            resultat_c = list(kamouss(searched_tag).keys())[0]
-	            resultat_c = list(kamouss(searched_tag).keys())[0].replace(")", "").replace("(", "")
-	            resultat = searchPopUp(list(kamouss(searched_tag).keys())[0].replace(")", "").replace("(", ""), list(kamouss(searched_tag).values())[0])
+                resultat_c = list(kamouss(searched_tag).keys())[0]
+                resultat_c = list(kamouss(searched_tag).keys())[0].replace(")", "").replace("(", "")
+                resultat = searchPopUp(list(kamouss(searched_tag).keys())[0].replace(")", "").replace("(", ""), list(kamouss(searched_tag).values())[0])
             for file in pathfiles:
                 resultat = resultat + '<div class="row m-2 bg-warning justify-content-end">' + \
                     'النص : ' + splitext(file)[0].split('\\')[-1] + '</div>'
@@ -175,19 +158,19 @@ def addToCorpus(request):
             age = form.cleaned_data['age']
             text = form.cleaned_data['text']
             if age == '1':
-                with open(mypath + "\\corpora\\acreljahlia\\" + tag + ".txt", "w", encoding="utf-8") as myfile:
+                with open(mypath + "/corpora/acreljahlia/" + tag + ".txt", "w", encoding="utf-8") as myfile:
                     myfile.write(text)
                 str_c = validationPopUp()
             elif age == '2':
-                with open(mypath + "\\corpora\\acrfjrislam\\" + tag + ".txt", "w", encoding="utf-8") as myfile:
+                with open(mypath + "/corpora/acrfjrislam/" + tag + ".txt", "w", encoding="utf-8") as myfile:
                     myfile.write(text)
                 str_c = validationPopUp()
             elif age == '3':
-                with open(mypath + "\\corpora\\acrelhadith\\" + tag + ".txt", "w", encoding="utf-8") as myfile:
+                with open(mypath + "/corpora/acrelhadith/" + tag + ".txt", "w", encoding="utf-8") as myfile:
                     myfile.write(text)
                 str_c = validationPopUp()
             else:
-                with open(mypath + "\\corpora\\quoran\\" + tag + ".txt", "w", encoding="utf-8") as myfile:
+                with open(mypath + "/corpora/quoran/" + tag + ".txt", "w", encoding="utf-8") as myfile:
                     myfile.write(text)
                 str_c = validationPopUp()
         else:
