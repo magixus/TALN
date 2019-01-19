@@ -4,10 +4,10 @@ TBWTokenizer = nltk.tokenize.TreebankWordTokenizer()
 from django.conf import settings
 from os.path import join
 
-mypath = join(settings.BASE_DIR, 'static\\nltk_data') 
+mypath = join(settings.BASE_DIR, 'static/nltk_data')
 
-stp1 = join(mypath,"corpora\\stopwords\\arabic")
-stp2 = join(mypath,"corpora\\stopwords\\arabic2")
+stp1 = join(mypath,"corpora/stopwords/arabic")
+stp2 = join(mypath,"corpora/stopwords/arabic2")
 # read input file and return it string
 def load(fileName):
     f = open(fileName, 'r', encoding="utf-8")
